@@ -45,16 +45,16 @@
     </section>
 
     <!-- Buttons -->
-    <main id="all-job" class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10">
+    <main class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10">
         <div class="flex justify-between mb-[24px]">
             <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
             <p class="text-[16px] text-[#64748B] font-medium">8 Jobs</p>
         </div>
 
         <div class="flex gap-2">
-            <button id="all-btn" class="bg-[#3B82F6] text-white lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] text-[12px] font-medium cursor-pointer">All</button>
-            <button id="interview-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Interview</button>
-            <button id="rejected-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Rejected</button>
+            <button onclick="toggleStyle('all-btn')" id="all-btn" class="bg-[#3B82F6] text-white lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] text-[12px] font-medium cursor-pointer">All</button>
+            <button onclick="toggleStyle('interview-btn')" id="interview-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Interview</button>
+            <button onclick="toggleStyle('rejected-btn')" id="rejected-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Rejected</button>
         </div>
 
 
