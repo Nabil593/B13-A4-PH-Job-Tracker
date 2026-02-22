@@ -1,3 +1,7 @@
+let interviewData = [];
+let rejectedData = [];
+
+// All switch toggle buttons
 let total = document.getElementById('total');
 let interview = document.getElementById('interview');
 let rejected = document.getElementById('rejected');
@@ -5,5 +9,10 @@ let rejected = document.getElementById('rejected');
 const JobDetails = document.getElementById('job-details');
 const totalJobs = JobDetails.children.length;
 
-let interviewArray = [];
-let rejectedArray = [];
+function switchButtons() {
+    total.innerText = totalJobs;
+    interview.innerText = interviewData.length;
+    rejected.innerText = rejectedData.length;
+}
+switchButtons();
+

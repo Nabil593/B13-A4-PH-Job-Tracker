@@ -45,24 +45,21 @@
     </section>
 
     <!-- Buttons -->
-    <section id="all-job" class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10">
+    <main id="all-job" class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10">
         <div class="flex justify-between mb-[24px]">
             <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
             <p class="text-[16px] text-[#64748B] font-medium">8 Jobs</p>
         </div>
 
         <div class="flex gap-2">
-            <button
-                class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">All</button>
-            <button
-                class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Interview</button>
-            <button
-                class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Rejected</button>
+            <button id="all-btn" class="bg-[#3B82F6] text-white lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] text-[12px] font-medium cursor-pointer">All</button>
+            <button id="interview-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Interview</button>
+            <button id="rejected-btn" class="lg:px-10 md:px-8 sm:px-4 px-4 py-2 rounded-[4px] bg-white text-[12px] font-medium cursor-pointer">Rejected</button>
         </div>
-    </section>
+
 
     <!-- Job details -->
-    <section id="job-details" class="w-full max-w-[1100px] m-auto mt-14 lg:px-0 md:px-10 sm:px-10 px-10 flex flex-col gap-4 mb-18">
+    <section id="job-details" class="w-full max-w-[1100px] m-auto mt-14 flex flex-col gap-4 mb-18">
         <div class="bg-white p-6 rounded-lg flex justify-between">
             <div>
                 <h3 class="text-[#002C5C] text-[20px] font-semibold">Mobile First Corp</h3>
@@ -215,6 +212,7 @@
             </div>
         </div>
     </section>
+</main>
 
     <!-- No Jobs or empty -->
     <section id="empty" class="w-full max-w-[1100px] m-auto mt-14 lg:px-0 md:px-10 sm:px-10 px-10 hidden">
