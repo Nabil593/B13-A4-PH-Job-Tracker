@@ -22,7 +22,7 @@ function switchButtons() {
     interview.innerText = interviewData.length;
     rejected.innerText = rejectedData.length;
 }
-// switchButtons();
+switchButtons();
 
 
 // Switcg Toggle function:
@@ -41,3 +41,25 @@ function toggleStyle(id) {
     selected.classList.add('bg-[#3B82F6]', 'text-white');
 }
 
+//Main container Click function
+mainContainer.addEventListener('click', function(e) {
+    const mainParentNode = e.target.parentNode;
+    const jobName = mainParentNode.querySelector('.job-name').innerText;
+    const jobTitle = mainParentNode.querySelector('.job-title').innerText;
+    const salary = mainParentNode.querySelector('.salary').innerText;
+    const jobStatus = mainParentNode.querySelector('.status').innerText;
+    const jobDiscription = mainParentNode.querySelector('.discription').innerText;
+    
+    const jobInfo = {
+        jobName,
+        jobTitle,
+        salary,
+        jobStatus,
+        jobDiscription
+    };
+    
+    const jobExist = interviewData.find(item => item.jobName == jobInfo.jobName);
+    if (!jobExist) {
+        interviewData.push(jobInfo);
+    }
+})
