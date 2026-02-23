@@ -48,7 +48,7 @@
     <main class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10">
         <div class="flex justify-between mb-[24px]">
             <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
-            <p class="text-[16px] text-[#64748B] font-medium">8 Jobs</p>
+            <p id="counter" class="text-[16px] text-[#64748B] font-medium">8 Jobs</p>
         </div>
 
         <div class="flex gap-2">
@@ -78,7 +78,7 @@
                 <button
                     class="reject-btn py-1.5 px-3 border-1 rounded-md border-[#EF4444] text-[#EF4444] text-[14px] font-semibold cursor-pointer">REJECTED</button>
             </div>
-            <div
+            <div id="delet"
                 class="w-9 h-9 border-1 p-2 border-[#c7c7c7] flex items-center justify-center rounded-full text-gray-500 cursor-pointer">
                 <i class="fa-regular fa-trash-can"></i>
             </div>
@@ -144,7 +144,7 @@
 </main>
 
     <!-- No Jobs or empty -->
-    <section id="empty-section" class="w-full max-w-[1100px] m-auto mt-14 lg:px-0 md:px-10 sm:px-10 px-10 hidden">
+    <section id="empty-section" class="w-full max-w-[1100px] m-auto lg:px-0 md:px-10 sm:px-10 px-10 hidden">
         <div class="bg-white mb-10 rounded-lg">
             <div class="text-center m-auto py-[111px]">
                 <img class="m-auto mb-5" src="./jobs.png" alt="jobs-empty">

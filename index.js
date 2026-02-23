@@ -1,6 +1,6 @@
 let interviewData = [];
 let rejectedData = [];
-let currentStatus = 'all';
+let currentStatus = 'all-btn';
 
 // All switch toggle buttons
 let total = document.getElementById('total');
@@ -9,17 +9,38 @@ let rejected = document.getElementById('rejected');
 const allBtn = document.getElementById('all-btn');
 const interviewBtn = document.getElementById('interview-btn');
 const rejectedBtn = document.getElementById('rejected-btn');
-// const noJobsSection = document.getElementById('empty-section');
+const noJobsSection = document.getElementById('empty-section');
+const counter = document.getElementById('counter');
+const delet = document.getElementById('delet');
 const mainContainer = document.querySelector('main');
 const filterSection = document.getElementById('filtered-section');
 const JobDetails = document.getElementById('job-details');
 const totalJobs = JobDetails.children.length;
+
+
+function sideCounter() {
+    // const currentTotal = JobDetails.children.length;
+    if(currentStatus === 'all-btn') {
+        counter.innerText = `${totalJobs} Jobs`;
+        if (totalJobs === 0) {
+            noJobsSection.classList.remove('hidden');
+        } else {
+            noJobsSection.classList.add('hidden');
+        }
+    } else if (currentStatus === 'interview-btn') {
+        counter.innerText = `${interviewData.length} of ${totalJobs} Jobs`;
+    } else if (currentStatus === 'rejected-btn') {
+        counter.innerText = `${rejectedData.length} of ${totalJobs} Jobs`;
+    }
+}
 
 // Dashboard Count
 function switchButtons() {
     total.innerText = totalJobs;
     interview.innerText = interviewData.length;
     rejected.innerText = rejectedData.length;
+    counter.innerText = `${totalJobs} Jobs`;
+    sideCounter();
 }
 switchButtons();
 
@@ -48,6 +69,7 @@ function toggleStyle(id) {
     } else if (id === 'all-btn') {
         JobDetails.classList.remove('hidden');
         filterSection.classList.add('hidden');
+        sideCounter();
     } else if (id === 'rejected-btn') {
         JobDetails.classList.add('hidden');
         filterSection.classList.remove('hidden');
@@ -135,6 +157,12 @@ mainContainer.addEventListener('click', function(e) {
 function renderInterview() {
     filterSection.innerHTML = '';
 
+    if (interviewData.length === 0) {
+        noJobsSection.classList.remove('hidden');
+    } else {
+        noJobsSection.classList.add('hidden');
+    };
+
     for(let inter of interviewData) {
         console.log(inter);
         let div = document.createElement('div');
@@ -142,11 +170,10 @@ function renderInterview() {
         div.innerHTML = `
         <div>
                 <h3 class="job-name text-[#002C5C] text-[20px] font-semibold">${inter.jobName}</h3>
-                <p class="job-title text-[#64748B] text-[16px]">React Native Developer</p>
-                <p class="salary text-[#64748B] text-[14px] my-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="job-title text-[#64748B] text-[16px]">${inter.jobTitle}</p>
+                <p class="salary text-[#64748B] text-[14px] my-[20px]">${inter.salary}</p>
                 <p class="status w-30 text-center py-1.5 px-3 rounded-md bg-green-200 text-[14px] font-medium border-1 border-[#10B981] text-[#027a24]">${inter.jobStatus}</p>
-                <p class="discription text-[#323B49] text-[14px] mt-2 mb-5">Build cross-platform mobile applications using React
-                    Native. Work on products used by millions of users worldwide.</p>
+                <p class="discription text-[#323B49] text-[14px] mt-2 mb-5">${inter.jobDiscription}</p>
                 <button
                     class="interv-btn py-1.5 px-3 border-1 rounded-md border-[#10B981] text-[#10B981] text-[14px] font-semibold cursor-pointer">INTERVIEW</button>
                 <button
@@ -159,6 +186,7 @@ function renderInterview() {
         `
         filterSection.appendChild(div);
     }
+    sideCounter();
 }
 
 
@@ -167,6 +195,12 @@ function renderInterview() {
 function renderRejected() {
     filterSection.innerHTML = '';
 
+    if (rejectedData.length === 0) {
+        noJobsSection.classList.remove('hidden');
+    } else {
+        noJobsSection.classList.add('hidden');
+    };
+
     for(let inter of rejectedData) {
         console.log(inter);
         let div = document.createElement('div');
@@ -174,11 +208,10 @@ function renderRejected() {
         div.innerHTML = `
         <div>
                 <h3 class="job-name text-[#002C5C] text-[20px] font-semibold">${inter.jobName}</h3>
-                <p class="job-title text-[#64748B] text-[16px]">React Native Developer</p>
-                <p class="salary text-[#64748B] text-[14px] my-[20px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="job-title text-[#64748B] text-[16px]">${inter.jobTitle}</p>
+                <p class="salary text-[#64748B] text-[14px] my-[20px]">${inter.salary}</p>
                 <p class="status w-30 text-center py-1.5 px-3 rounded-md text-[14px] font-medium bg-red-200 border border-red-700 text-red-600">${inter.jobStatus}</p>
-                <p class="discription text-[#323B49] text-[14px] mt-2 mb-5">Build cross-platform mobile applications using React
-                    Native. Work on products used by millions of users worldwide.</p>
+                <p class="discription text-[#323B49] text-[14px] mt-2 mb-5">${inter.jobDiscription}</p>
                 <button
                     class="interv-btn py-1.5 px-3 border-1 rounded-md border-[#10B981] text-[#10B981] text-[14px] font-semibold cursor-pointer">INTERVIEW</button>
                 <button
@@ -190,5 +223,6 @@ function renderRejected() {
             </div>
         `
         filterSection.appendChild(div);
-    }
+    };
+    sideCounter();
 }
