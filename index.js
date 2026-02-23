@@ -32,7 +32,7 @@ function sideCounter() {
     } else if (currentStatus === 'rejected-btn') {
         counter.innerText = `${rejectedData.length} of ${totalJobs} Jobs`;
     }
-}
+};
 
 // Dashboard Count
 function switchButtons() {
