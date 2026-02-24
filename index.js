@@ -1,6 +1,6 @@
-const totalCountEl = document.getElementById("total");
-const interviewCountEl = document.getElementById("interview");
-const rejectedCountEl = document.getElementById("rejected");
+const totalCount = document.getElementById("total");
+const interviewCount = document.getElementById("interview");
+const rejectedCount = document.getElementById("rejected");
 
 const allBtn = document.getElementById("all-btn");
 const interviewBtn = document.getElementById("interview-btn");
@@ -20,9 +20,9 @@ let currentStatus = "all-btn";
 function updateDashboard() {
   const totalJobs = jobDetailsContainer.children.length;
 
-  totalCountEl.innerText = totalJobs;
-  interviewCountEl.innerText = interviewData.length;
-  rejectedCountEl.innerText = rejectedData.length;
+  totalCount.innerText = totalJobs;
+  interviewCount.innerText = interviewData.length;
+  rejectedCount.innerText = rejectedData.length;
 
   if (currentStatus === "all-btn") {
     counterText.innerText = `${totalJobs} Jobs`;
