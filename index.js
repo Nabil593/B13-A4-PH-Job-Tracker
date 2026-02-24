@@ -46,7 +46,8 @@ function updateDashboard() {
       noJobsSection.classList.remove("hidden");
     }
   }
-}
+};
+updateDashboard();
 
 // Filter toggle style
 function toggleStyle(id) {
@@ -196,4 +197,3 @@ function updateJobStatus(card, jobName, status) {
 
   updateDashboard();
 };
-updateDashboard();
