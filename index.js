@@ -80,10 +80,10 @@ function toggleStyle(id) {
 }
 
 // Interview & Rejected render function
-function renderFilteredData(dataList) {
+function renderFilteredData(data) {
   filterSection.innerHTML = "";
 
-  for (const item of dataList) {
+  for (const item of data) {
     const isInterview = item.jobStatus === "INTERVIEW";
 
     let div = document.createElement("div");
@@ -116,7 +116,9 @@ mainContainer.addEventListener("click", function (e) {
     card = card.parentElement;
   }
 
-  if (!card || card === mainContainer) return;
+  if (!card || card === mainContainer) {
+    return;
+  };
 
   const jobName = card.querySelector(".job-name").innerText;
 
@@ -163,11 +165,9 @@ function updateJobStatus(card, jobName, status) {
       statusEl.innerText = status;
 
       if (status === "INTERVIEW") {
-        statusEl.className =
-          "status w-30 text-center py-1.5 px-3 rounded-md text-[14px] font-medium border bg-green-100 border-green-500 text-green-700";
+        statusEl.className = "status w-30 text-center py-1.5 px-3 rounded-md text-[14px] font-medium border bg-green-100 border-green-500 text-green-700";
       } else {
-        statusEl.className =
-          "status w-30 text-center py-1.5 px-3 rounded-md text-[14px] font-medium border bg-red-100 border-red-500 text-red-700";
+        statusEl.className = "status w-30 text-center py-1.5 px-3 rounded-md text-[14px] font-medium border bg-red-100 border-red-500 text-red-700";
       }
       break;
     }
