@@ -31,4 +31,4 @@ Answer: preventDefault() is stops the browser's default action. On the other han
 
 ---
 
-# Live Site Link: https://nabil593.github.io/B13-A4-PH-Job-Tracker/ 
+### Live Site Link: https://nabil593.github.io/B13-A4-PH-Job-Tracker/ 
