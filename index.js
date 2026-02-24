@@ -100,7 +100,7 @@ function renderFilteredData(data) {
                 <button class="interv-btn py-1.5 px-3 border rounded-md border-[#10B981] text-[#10B981] text-[14px] font-semibold cursor-pointer">INTERVIEW</button>
                 <button class="reject-btn py-1.5 px-3 border rounded-md border-[#EF4444] text-[#EF4444] text-[14px] font-semibold cursor-pointer">REJECTED</button>
             </div>
-            <div class="delete-btn w-9 h-9 border p-2 border-[#c7c7c7] flex items-center justify-center rounded-full text-gray-500 cursor-pointer">
+            <div class="delete-btn w-8 h-8 p-2 text-[20px] flex items-center justify-center rounded-full text-gray-500 cursor-pointer">
                 <i class="fa-regular fa-trash-can"></i>
             </div>`;
 
